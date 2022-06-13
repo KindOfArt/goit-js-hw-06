@@ -14,6 +14,19 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
+
 const refs = {
   gallery: document.querySelector(".gallery"),
 };
+
+const createGalleryItemMurkup = (images) => {
+  return images
+    .map(({ url, alt }) => {
+      return `<li class="gallery__item"><img class="gallery__img" src=${url} alt=${alt}></li>`;
+    })
+    .join("");
+};
+
+const createdGalleryItem = createGalleryItemMurkup(images);
+
+refs.gallery.insertAdjacentHTML("afterbegin", createdGalleryItem);
