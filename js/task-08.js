@@ -15,9 +15,15 @@ function onFormSubmit(event) {
   const formElements = formCurrent.elements;
 
   if (
-    formElements.email.value.length > 0 &&
-    formElements.password.value.length > 0
+    formElements.email.value.length === 0 ||
+    formElements.password.value.length === 0
   ) {
+    alert("All fields must be filled");
+    formCurrent.reset();
+  } else if (formElements.password.value.includes(" ")) {
+    alert("There is forbidden the space simbol in the password field");
+    formCurrent.reset();
+  } else {
     const email = formElements.email.value;
     const password = formElements.password.value;
     const formData = {
@@ -25,10 +31,7 @@ function onFormSubmit(event) {
       password,
     };
 
-    console.log(formData);
-
     formCurrent.reset();
-  } else {
-    alert("Value of email and password can not be empty!");
+    console.log(formData);
   }
 }
