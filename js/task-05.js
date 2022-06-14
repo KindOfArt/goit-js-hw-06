@@ -3,11 +3,13 @@ const refs = {
   output: document.querySelector("#name-output"),
 };
 
-refs.input.addEventListener("input", (event) => {
-  const { output } = refs;
-  let currentTargetValue = event.currentTarget.value;
+refs.input.addEventListener("input", onInputEvent);
 
-  currentTargetValue !== ""
-    ? (output.textContent = currentTargetValue)
+function onInputEvent(event) {
+  const { output } = refs;
+  let inputCurrentValue = event.currentTarget.value;
+
+  inputCurrentValue !== ""
+    ? (output.textContent = inputCurrentValue)
     : (output.textContent = "Anonymus");
-});
+}

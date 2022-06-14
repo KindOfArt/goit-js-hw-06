@@ -3,7 +3,9 @@ const refs = {
   span: document.querySelector("#text"),
 };
 
-refs.input.addEventListener("input", () => {
-  const { input, span } = refs;
-  span.style.fontSize = `${input.value}px`;
-});
+refs.input.addEventListener("input", onInputSwap);
+
+function onInputSwap(event) {
+  const inputValue = event.currentTarget.value;
+  refs.span.style.fontSize = `${inputValue}px`;
+}

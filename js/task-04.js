@@ -11,9 +11,11 @@ let counterValue = 0;
 
 function onBtnIncrementClick() {
   counterValue += 1;
+
   refs.counter.textContent = counterValue;
 }
 function onBtnDecrementClick() {
   counterValue -= 1;
+
   refs.counter.textContent = counterValue;
 }
