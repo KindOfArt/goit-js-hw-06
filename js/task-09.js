@@ -11,6 +11,7 @@ const refs = {
 refs.CHANGE_COLOR_BTN.addEventListener("click", onChengeColorBtn);
 
 function onChengeColorBtn() {
-  refs.BODY.style.backgroundColor = getRandomHexColor();
-  refs.OUTPUT_COLOR.textContent = getRandomHexColor();
+  const color = getRandomHexColor();
+  refs.BODY.style.backgroundColor = color;
+  refs.OUTPUT_COLOR.textContent = color;
 }

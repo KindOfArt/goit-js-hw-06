@@ -24,8 +24,8 @@ function onDestroyBtnClick() {
 
 function createBoxes(amount) {
   const boxesConteiner = [];
-  let width = 30;
-  let height = 30;
+  let width = 20;
+  let height = 20;
 
   for (let i = 0; i < amount; i += 1) {
     const box = document.createElement("div");
